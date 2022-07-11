@@ -1,0 +1,10 @@
+td {
+    height: 50px;
+    width: 50px;
+    background: blue;
+    font-size: 0;
+}
+
+input {
+    width: 100%;
+}
