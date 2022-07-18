@@ -5,6 +5,10 @@ td {
     font-size: 0;
 }
 
-input {
-    width: 100%;
+.geltona {
+    background-color: yellow;
+}
+
+.raudona {
+    background-color: red;
 }

@@ -4,13 +4,10 @@ document.querySelector("#reset").addEventListener("click", function (){
     window.location.reload();
 })
 
+let kvadrateliai=Math.floor(Math.random()*28)+3;
 let kvadratai=[];
 
-// document.querySelector("#pradeti").addEventListener("click", function(){
-//     let ivestasLygis,suma;
-//     ivestasLygis=document.getElementById("#skaiciai").value;
-//     suma=ivestasLygis*3;
-    for(let i=0; i<3; i++) {
+    for(let i=0; i<kvadrateliai; i++) {
         let kvadratas={
             pirmasStulpelis:"pirmasStulpelis",
             antrasStulpelis:"antrasStulpelis",
@@ -48,5 +45,22 @@ let kvadratai=[];
     
         document.querySelector("#kvadratai").appendChild(tr);
     }
-// });
 
+let akmenukas = Math.floor(Math.random()*(kvadratai.length-1));
+
+kvadratai[akmenukas]=1;
+
+let kvadrateliaiPaspaudimai = document.querySelectorAll(".testas");
+
+for (let j=0; j<kvadrateliaiPaspaudimai.length; j++) {
+    kvadrateliaiPaspaudimai[j].addEventListener("click",function(){
+        console.log(j);
+        if(kvadratai[j]==1){
+            console.log("laimejai");
+            this.classList.add("geltona");
+        } else {
+            console.log("nelaimejai, speliok toliau");
+            this.classList.add("raudona");
+        }
+    })
+}
